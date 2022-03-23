@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-etherscan");
 require("dotenv").config();
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -34,8 +35,16 @@ module.exports = {
     },
     mainnet: {
       url: `https://eth-mainnet.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
+      chainId: 1,
       accounts: [`0x${process.env.PRIVATE_KEY}`],
+      gasPrice: 50000000000,
     },
+    polygon: {
+      url: `https://polygon-mainnet.g.alchemy.com/v2/${process.env.ALCHEMY_API_KEY}`,
+      chainId: 137,
+      accounts: [`0x${process.env.PRIVATE_KEY}`],
+      gasPrice: 50000000000,
+    }
   },
   etherscan: {
     apiKey: process.env.ETHERSCAN_KEY,

@@ -39,8 +39,7 @@ async function main() {
             '1000000000000000000000000000',
             '40000000000000000000000000',
             '1000000000000000000000000000'
-        ],
-        contract: "DefaultReserveInterestRateStrategy"
+        ]
     })
   } catch (error) {
       console.log('Failed to verify Contract');
